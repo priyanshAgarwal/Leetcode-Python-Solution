@@ -44,7 +44,7 @@ Simple method reverse a number and check with the original number
 """
 from copy import copy
 
-class Solution:
+class Solution1:
     def isPalindrome(self, x: int) -> bool:
         if x>=0:
             var_copy=copy(x)
@@ -57,18 +57,16 @@ class Solution:
 
 
 # Method 2 Using String Manupulation 
-class Solution:
+class Solution2:
     def isPalindrome(self, x: int) -> bool:
         if str(x)==str(x)[::-1]:
             return True
         else: return False 
 
 # Method 3
-class Solution:
+class Solution3:
     def isPalindrome(self, x: int) -> bool:
       if str(x)==''.join(reversed(str(x))):
         return True
       else:
         return False
-
-

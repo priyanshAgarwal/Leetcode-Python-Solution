@@ -42,5 +42,6 @@ class Solution(object):
 
             if len(set(n))==1:
                 result+=n[0]  
-            else: return result # This returnis to break when we have exausted all the sinle len sets.  
+            else: return result # This returnis to break when we have exausted all the sinle len sets.
+            # else: break  could also be used 
         return result # This return is important if intial strs in empty

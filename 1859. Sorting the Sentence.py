@@ -32,12 +32,9 @@ s consists of lowercase and uppercase English letters, spaces, and digits from 1
 The number of words in s is between 1 and 9.
 The words in s are separated by a single space.
 s contains no leading or trailing spaces.
-
 """
 
-
 #Method 1
-
 class Solution(object):
     def sortSentence(self, s):
         """

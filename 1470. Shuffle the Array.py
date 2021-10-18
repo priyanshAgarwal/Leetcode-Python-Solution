@@ -24,3 +24,12 @@ Input: nums = [1,1,2,2], n = 2
 Output: [1,2,1,2]
 
 """
+
+#Method 1
+class Solution(object):
+    def shuffle(self, nums, n):
+        new_arr=[]
+        for i in range(n):
+            new_arr.append(nums[i])
+            new_arr.append(nums[i+n])
+        return(new_arr)

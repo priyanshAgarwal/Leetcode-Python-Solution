@@ -36,8 +36,6 @@ class ListNode:
         self.val = val
         self.next = next
 
-
-
 class Solution:
     def mergeTwoLists(self, l1: [ListNode], l2: [ListNode]) -> [ListNode]:
         dummy = temp = ListNode(0)
@@ -54,7 +52,7 @@ class Solution:
         temp.next = l1 or l2
         return dummy.next
 
-
+# Method 2
 class Solution:
     def mergeTwoLists(self, l1, l2):
         if l1 is None:

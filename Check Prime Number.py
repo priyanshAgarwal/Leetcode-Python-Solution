@@ -12,4 +12,4 @@ def check_prime(n):
             break
     return if_prime
 
-print(check_prime(243535317))
+print(f"It is Prime Number, {check_prime(9816022981)}")

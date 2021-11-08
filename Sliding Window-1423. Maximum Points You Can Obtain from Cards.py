@@ -54,8 +54,8 @@ class Solution:
         sum_max=sum(cardPoints[:k])
         curr=sum_max
         for i in range(1,k):
-            deduct=cardPoints[k-i]
-            incre=cardPoints[-i]
-            curr=curr-deduct+incre
+            deduct=cardPoints[k-i] #Remove from Left
+            incre=cardPoints[-i] #Add to Right
+            curr=curr-deduct+incre #Remove left from sum and add right to the sum
             sum_max=max(sum_max,curr)
         return sum_max

@@ -66,7 +66,6 @@ class Solution:
         elif n==1 or n==2:
             return 1
         else:
-                        
             nums=[0,1,1]
             for i in range(n-2):
                 nums.append(nums[-1]+nums[-2]+nums[-3])

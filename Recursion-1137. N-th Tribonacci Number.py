@@ -1,7 +1,7 @@
 # cook your dish here
 
 """
-The Tribonacci sequence Tn is defined as follows: 
+1137. The Tribonacci sequence Tn is defined as follows: 
 
 T0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n >= 0.
 
@@ -55,10 +55,7 @@ class Solution(object):
                 n-=1
             return list_seq[-1]
 
-
-
 #Method 2 (Awesome Method)
-
 class Solution:
     def tribonacci(self, n: int) -> int:
         if n==0:
@@ -70,4 +67,3 @@ class Solution:
             for i in range(n-2):
                 nums.append(nums[-1]+nums[-2]+nums[-3])
             return nums[-1]
-

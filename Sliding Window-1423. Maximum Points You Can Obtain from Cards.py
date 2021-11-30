@@ -25,7 +25,9 @@ Example 1:
 
 Input: cardPoints = [1,2,3,4,5,6,1], k = 3
 Output: 12
-Explanation: After the first step, your score will always be 1. However, choosing the rightmost card first will maximize your total score. The optimal strategy is to take the three cards on the right, giving a final score of 1 + 6 + 5 = 12.
+Explanation: After the first step, your score will always be 1. However, choosing the rightmost
+card first will maximize your total score. The optimal strategy is to take the three cards on the
+right, giving a final score of 1 + 6 + 5 = 12.
 Example 2:
 
 Input: cardPoints = [2,2,2], k = 2
@@ -53,9 +55,11 @@ class Solution:
     def maxScore(self, cardPoints: List[int], k: int) -> int:
         sum_max=sum(cardPoints[:k])
         curr=sum_max
-        for i in range(1,k):
-            deduct=cardPoints[k-i] #Remove from Left
-            incre=cardPoints[-i] #Add to Right
-            curr=curr-deduct+incre #Remove left from sum and add right to the sum
+        for i in range(1,k+1):
+            deduct=cardPoints[k-i]
+            incre=cardPoints[-i]
+            curr=curr-deduct+incre
             sum_max=max(sum_max,curr)
         return sum_max
+
+        

@@ -67,6 +67,14 @@ class Solution(object):
         return len(nums)
 
 
+# why for i in nums wont work
+# [0,1,2,2,3,0,4,2]
+# 2
+# In the above case for loop won't work because adjecent 2 hai to it won't 
+# be able to remove the last 2 because, when it reaches the last 2
+# it remove the adjecent 2 
+
+
 #Method 2 (So Pop funcion me use while becaue pop takes index)
 class Solution(object):
     def removeElement(self, nums, val):

@@ -49,3 +49,9 @@ class Solution:
 # Under the hood, s[:] = is editing the actual memory bytes s points to, 
 # and s = points the variable name s to other bytes in the memory.
 
+# arr[:] returns arr (alist[:] returns a copy of a list). 
+# arr[:]=arr2 performs an inplace replacement; changing the values of arr to the values of arr2. 
+# The values of arr2 will be broadcasted and copied as needed.
+
+# arr=arr2 sets the object that the arr variable is pointing to. 
+# Now arr and arr2 point to the same thing (whether array, list or anything else).

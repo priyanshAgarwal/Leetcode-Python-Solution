@@ -37,10 +37,6 @@ s contains no leading or trailing spaces.
 #Method 1
 class Solution(object):
     def sortSentence(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         words=s[::-1].split() # Get the last number in front
         words.sort() # Sort by first letter
         result=[word[1:][::-1] for word in words] 
@@ -51,10 +47,6 @@ class Solution(object):
 #Method 2 Using Dictionaries (Much Faster Approach)
 class Solution1(object):
     def sortSentence(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         dict_res={}
         res_str=''
         for word in s.split():

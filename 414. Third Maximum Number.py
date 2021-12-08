@@ -68,3 +68,17 @@ class Solution(object):
         s = sorted(s, reverse=True)
         if len(s) < 3:return s[0]
         else:return s[2]
+
+
+#Method 4
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        nums=set(nums)
+        max_num=max(nums)
+        nums.remove(max_num)
+        
+        if len(nums)<2:
+            return max_num
+        
+        nums.remove(max(nums))
+        return max(nums)

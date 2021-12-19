@@ -4,13 +4,6 @@
 14. Longest Common Prefix
 Easy
 
-6220
-
-2661
-
-Add to List
-
-Share
 Write a function to find the longest common prefix string amongst an array of strings.
 
 If there is no common prefix, return an empty string "".
@@ -53,3 +46,12 @@ class Solution:
         return str_common
 
 
+#Method 3
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        min_str,max_str=min(strs),max(strs)
+        
+        for i,letter in enumerate(min_str):
+            if letter!=max_str[i]:
+                return min_str[:i]
+        return min_str

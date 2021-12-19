@@ -29,7 +29,20 @@ Explanation: There is no common prefix among the input strings.
 
 """
 
+#Method 1
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        
+        shortest=min(strs,key=len)
+        for i,ch in enumerate(shortest):
+            for word in strs:
+                if word[i]!=ch:
+                    return shortest[:i]
+        return shortest
 
+
+
+#Method 2
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         str_common=""
@@ -38,3 +51,5 @@ class Solution:
                 str_common+=i[0]  
             else: return str_common
         return str_common
+
+

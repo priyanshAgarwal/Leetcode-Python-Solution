@@ -43,13 +43,11 @@ Constraints:
 """
 
 #Method 1 Using Memory
-
 class Solution:
     def fib(self, n: int) -> int:
         
         def Fib_num(n):
-            memo={0:0,1:1}
-                        
+            memo={0:0,1:1}  
             if n in memo:
                 return memo[n]
             else:

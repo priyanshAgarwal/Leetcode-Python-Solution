@@ -35,5 +35,26 @@ n == grid[i].length
 1 <= m, n <= 100
 -100 <= grid[i][j] <= 100
 
-
 """
+
+#Method 1
+class Solution:
+    def countNegatives(self, grid: List[List[int]]) -> int:
+        count=0
+        for row in grid:
+            for element in row:
+                if element<0:count+=1
+        return count
+
+
+
+#Method 2
+import numpy as np
+
+class Solution:
+    def countNegatives(self, grid: List[List[int]]) -> int:
+        count=0
+        grid_list=np.array(grid).flatten()
+        for i in grid_list:
+            if i<0:count+=1
+        return count

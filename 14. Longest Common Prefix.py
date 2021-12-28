@@ -18,6 +18,15 @@ Example 2:
 Input: strs = ["dog","racecar","car"]
 Output: ""
 Explanation: There is no common prefix among the input strings.
+
+
+In Python String starts with A and Ends with a(Small a is maximum)
+max_str: "a"
+min_str: "A"
+strs: ["a","A"]
+
+
+
 """
 
 #Method 1

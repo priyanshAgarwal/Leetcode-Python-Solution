@@ -55,20 +55,27 @@ matrix=np.array(matrix)
 [5,1,2,3],
 [9,5,1,2]]
 
-print(matrix[2:3,2:4])
+print(matrix[2:3,2:4]) This won't work if matrix is not numpy type
 
 [[1 2]]
 
 Take  3 row and then filter 3 and 4 column
 
-print(matrix[0,1:4])
+print(matrix[0,1:4]) This won't work if matrix is not numpy type
 
 [2 3 4]
 
 First row ke 2,3,4 elements.
+
+print(matrix[1][:-1]) This won't work with Numpy Matrix.
+
+[5, 1, 2]
+
+Print all the elements of first row except the last element.
 """
 
-
+# Method 1
+# Because we have to compare +1 of Matrix we run the loop with -1
 class Solution(object):
 	def isToeplitzMatrix(self, matrix):
 		for i in range(len(matrix)-1):
@@ -76,3 +83,14 @@ class Solution(object):
 				if matrix[i][j] != matrix[i + 1][j + 1]:
 					return False
 		return True
+
+
+# Method 2
+class Solution(object):
+    def isToeplitzMatrix(self, matrix):
+        i=0
+        while i+1<len(matrix):
+            if matrix[i][:-1]!=matrix[i+1][1:]:
+                return False
+            i+=1
+        return True

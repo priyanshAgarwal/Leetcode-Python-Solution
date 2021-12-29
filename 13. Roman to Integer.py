@@ -68,3 +68,18 @@ class Solution:
             if key in s:
                 s = s.replace(key, f'+{value}')
         return eval(s)
+
+
+# Method 2
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        roman_dict = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
+        total_sum=0
+        previous=0
+        for i in s[::-1]:
+            current=roman_dict[i]
+            if previous>current:
+                total_sum-=current
+            else:total_sum+=current
+            previous=current
+        return total_sum

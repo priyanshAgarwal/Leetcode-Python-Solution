@@ -33,3 +33,16 @@ class Solution(object):
             new_arr.append(nums[i])
             new_arr.append(nums[i+n])
         return(new_arr)
+
+
+# Method 2 (In Place)
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        index = 0
+        length = len(nums)
+        while n < length:
+            y = nums.pop(n)
+            nums.insert(index+1, y)
+            index += 2
+            n += 1
+        return nums

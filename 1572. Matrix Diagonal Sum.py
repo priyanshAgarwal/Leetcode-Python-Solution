@@ -4,10 +4,6 @@
 1572. Matrix Diagonal Sum
 Easy
 
-797
-
-16
-
 Add to List
 
 Share
@@ -40,14 +36,42 @@ Output: 5
 
 """
 
+"""
+First Diagonal matrix
+mat[i][i]
 
+Second Diagonal matrix
+mat[i][n-1-i]
+
+"""
+
+# Method 1
 class Solution:
     def diagonalSum(self, mat: List[List[int]]) -> int:
         sum_diagonal=0
         n=len(mat)
         for i in range(n):
             sum_diagonal+=mat[i][i]+mat[i][n-1-i]
+        
         x = n//2
         if n%2==1:
             sum_diagonal-=mat[x][x]
         return(sum_diagonal)
+
+# Method 2
+
+"""
+Two for loop 
+if i==j or ((i+j)==n-1):
+First condition is to get diagonal secong condition is to get other diagonal
+
+Second diagonal condition ((i+j)==n-1)
+"""
+class Solution:
+    def diagonalSum(self, mat: List[List[int]]) -> int:
+        n=len(mat)
+        sum_diagonal=0
+        for i in range(n):
+            for j in range(n):
+                if i==j or ((i+j)==n-1):
+                    sum_diagonal+=mat[i][j]

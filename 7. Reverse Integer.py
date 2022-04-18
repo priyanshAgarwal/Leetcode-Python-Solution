@@ -13,6 +13,5 @@ class Solution:
         if ans >= 2**31-1 or ans <= -2**31: return 0
         else: return(ans) 
 
-
 a=Solution()
 print(a.reverse(123))

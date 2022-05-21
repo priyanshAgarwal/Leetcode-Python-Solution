@@ -33,6 +33,15 @@ Input: paragraph = "a.", banned = []
 Output: "a"
 
 """
+from collections import Counter
+import re
+
+
+string='a quick brown fox jumps over the lazy dog'
+hash_map=Counter(string)        
+print(hash_map)
+
+
 
 from collections import Counter
 import re

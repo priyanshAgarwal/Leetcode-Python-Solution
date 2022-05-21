@@ -39,29 +39,22 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        if x>=0:
-            str1=str(x)
-            str2=str1[::-1]
-            if str1==str2:
-                return True
-        return False
-
+        # print(f"Original String is {x} reversed string is {str(x)[::-1]}")
+        if str(x)==str(x)[::-1]:
+            return True
+        else:False
 
 
 #Method 2
-from copy import copy
-
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        if x>=0:
-            var_copy=copy(x)
-            rev_num=0
-            while x!=0:
-                rev_num=rev_num*10+x%10
-                x=int(x/10)
-            if rev_num==var_copy: return True
-        else: return False                
-
+        input_num=x
+        new_num=0
+        while input_num>0:
+            new_num=new_num*10+input_num%10
+            input_num=input_num//10
+        if new_num==x:return True
+        else: return False
 
 #Method 3
 class Solution:

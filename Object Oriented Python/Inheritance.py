@@ -55,11 +55,11 @@ class Manager(Employee):
 dev_1 = Developer('Corey', 'Schafer', 50000, 'Python')
 dev_2 = Developer('Test', 'Employee', 60000, 'Java')
 
-mgr_1 = Manager('Sue', 'Smith', 90000, [dev_1])
+mgr_1 = Manager('Sue', 'Smith', 90000, [dev_1,dev_2])
 
 print(mgr_1.email)
 
-mgr_1.add_emp(dev_2)
-mgr_1.remove_emp(dev_2)
+# mgr_1.add_emp(dev_2)
+# mgr_1.remove_emp(dev_2)
 
 mgr_1.print_emps()

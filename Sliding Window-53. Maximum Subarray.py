@@ -40,17 +40,27 @@ Constraints:
 Follow up: If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
 """
+# Will Pass some cases
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        result_arr=[]
+        for i in range(len(nums)):
+            for j in range(len(nums)):
+                sum_values=sum((nums[i:j+1]))
+                result_arr.append(sum_values)
+        return max(result_arr)
+
 
 # Method 1 (TLE)
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:       
-        max_subarray=-float('inf')
+        ans = -inf
         for i in range(len(nums)):
-            current_array=0
-            for j in range(i,len(nums)):
-                current_array+=nums[j]
-                max_subarray=max(max_subarray,current_array)
-        return max_subarray
+            cur_sum = 0
+            for j in range(i, len(nums)):
+                cur_sum += nums[j]
+                ans = max(ans, cur_sum)
+        return ans
 
 # Method 2
 class Solution:

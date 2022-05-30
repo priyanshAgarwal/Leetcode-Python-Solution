@@ -36,7 +36,7 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 
 """
 
-
+#Method 1
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         # print(f"Original String is {x} reversed string is {str(x)[::-1]}")

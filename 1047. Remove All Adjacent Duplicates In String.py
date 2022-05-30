@@ -37,20 +37,21 @@ Output: "ay"
 """
 
 # Method 1 (Very Slow Solution, only better than 5% solution)
+# Method 1
 class Solution:
     def removeDuplicates(self, s: str) -> str:
-        for l in s:
-            s=s.replace(2*l,'')
-        return(s)
-
-
-# Method 2 (Better than 66% users)
+        for i in s:
+            if i*2 in s:
+                s = s.replace(i*2, '')
+        return s
+                                
+# Method 2
 class Solution:
     def removeDuplicates(self, S: str) -> str:
-        stack = []
-        for char in S:
-            if stack and stack[-1] == char:
-                stack.pop()
-            else:
-                stack.append(char)
-        return ''.join(stack)
+        output=[]
+        for ch in S:
+            if output and ch==output[-1]: # So the idea is if last element in the output array is equal to 
+            # current char then pop the last element from the array
+                output.pop()
+            else:output.append(ch)
+        return ''.join(output) 

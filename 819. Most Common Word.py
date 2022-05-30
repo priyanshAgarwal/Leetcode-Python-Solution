@@ -42,6 +42,20 @@ hash_map=Counter(string)
 print(hash_map)
 
 
+# My Code
+import re
+
+class Solution:
+    def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
+        dict_counter={}
+        paragraph=paragraph.lower()
+        paragraph=re.findall('\w+',paragraph)
+        for i in paragraph:
+            dict_counter[i]=dict_counter.get(i,0)+1 
+        for i in banned:
+            if i in dict_counter: 
+                dict_counter.pop(i)
+        return (max(dict_counter,key=dict_counter.get))         
 
 from collections import Counter
 import re

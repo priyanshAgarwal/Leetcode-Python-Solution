@@ -13,5 +13,13 @@ class Solution:
         if ans >= 2**31-1 or ans <= -2**31: return 0
         else: return(ans) 
 
-a=Solution()
-print(a.reverse(123))
+
+
+def rev(n):
+    ans=0
+    while n>0:
+        n, digit=divmod(n,10)
+        ans=ans*10+digit
+    return ans
+# a=Solution()
+print(rev(123))

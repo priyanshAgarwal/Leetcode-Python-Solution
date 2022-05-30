@@ -36,7 +36,18 @@ class Solution:
                 return True
         return False
 
-#Method 2
+# Method 3
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        counter_dict={}
+        for i in nums:
+            if i in counter_dict:
+                return True
+                break
+            else:counter_dict[i]=counter_dict.get(i,0)+1                
+        return False
+
+# Method 2
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         arr=(set(nums))

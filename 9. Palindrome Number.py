@@ -44,6 +44,16 @@ class Solution:
             return True
         else:False
 
+# My Solution
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x<0:
+            return False
+        ans,num=0,x
+        while x>0:
+            x, digit=divmod(x,10)
+            ans=ans*10+digit
+        return ans==num
 
 #Method 2
 class Solution:

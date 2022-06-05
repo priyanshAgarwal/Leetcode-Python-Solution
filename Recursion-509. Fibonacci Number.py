@@ -64,4 +64,4 @@ class Solution:
             if n==1:return 1            
             if n>=2:
                 return Fib_num(n-1)+Fib_num(n-2) 
-        return Fib_num(n)
+        return Fib_num(n) #Function is being called from here

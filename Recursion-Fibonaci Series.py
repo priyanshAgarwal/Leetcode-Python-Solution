@@ -12,18 +12,18 @@ def fibonaci(n):
         fib.append(val)
     return fib
 
-# print(fibonaci(10))
+print(fibonaci(20))
 
 # Method 2
-def fibonaci_simple(n):
-    fib=[0]*n
-    fib[1]=1
-    for i in range(2,n):
-        fib[i]=fib[i-1]+fib[i-2]
+# def fibonaci_simple(n):
+#     fib=[0]*n
+#     fib[1]=1
+#     for i in range(2,n):
+#         fib[i]=fib[i-1]+fib[i-2]
 
-    return fib[n-1]
+#     return fib[n-1]
 
-print(fibonaci_simple(10))
+# print(fibonaci_simple(10))
 
 
 

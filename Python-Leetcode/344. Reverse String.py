@@ -47,6 +47,8 @@ class Solution:
 class Solution:
     def reverseString(self, s: List[str]) -> None:
         s[:] = s[::-1]
+# or could be used.       
+        return s.reverse()
 # s[:] = s[::-1] is required NOT s = s[::-1] because you have to edit the list inplace.
 # Under the hood, s[:] = is editing the actual memory bytes s points to, 
 # and s = points the variable name s to other bytes in the memory.

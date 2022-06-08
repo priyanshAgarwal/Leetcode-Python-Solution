@@ -22,3 +22,10 @@ macbook = playbook_events.loc[playbook_events['device'] == 'macbook pro','event_
 
 # This is dataframe, function is different
 macbook = playbook_events.loc[playbook_events['device'] == 'macbook pro'].groupby(['event_name'])['user_id'].count().reset_index()
+
+import pandas as pd
+
+# Start writing code
+playbook_events.head()
+macbook = playbook_events.loc[playbook_events['device'] == 'macbook pro']
+result = macbook.groupby(['event_name'])['user_id'].count().to_frame('event_count').reset_index().sort_values('event_count', ascending=False)

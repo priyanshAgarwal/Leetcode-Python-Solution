@@ -25,4 +25,10 @@ worker.head()
 df=worker.loc[ (worker['salary']>= 50000)&(worker['salary']<= 100000)]
 
 df['Worker_Name']=df['first_name']+' '+df['last_name']
+
 df.loc[:,['salary','Worker_Name']]
+df[['salary','Worker_Name']]
+
+# Optimized Solution
+worker['full_name']=worker['first_name']+' '+worker['last_name']
+worker.loc[worker['salary'].between(50000,100000),['full_name','salary']] 

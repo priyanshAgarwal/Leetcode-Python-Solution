@@ -25,5 +25,10 @@ import pandas as pd
 amazon_shipment.head()
 
 df=amazon_shipment
+# both will output Year-Month (Date Format)
 df['year_month'] = amazon_shipment['shipment_date'].dt.strftime('%Y-%m')
+df['year_month'] = df['shipment_date'].dt.to_period('M')
+
+# size includes NaN values, count does not:
+df.groupby('year_month').size().to_frame('num_of_shipment').reset_index()
 df.groupby(['year_month']).count().reset_index()

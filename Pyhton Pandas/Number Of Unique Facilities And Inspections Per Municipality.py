@@ -3,7 +3,6 @@
 """
 Number Of Unique Facilities And Inspections Per Municipality
 
-
 Interview Question Date: April 2018
 
 City of Los Angeles
@@ -30,3 +29,6 @@ df['facility_zip']=df['facility_zip'].str[:5]
 df=los_angeles_restaurant_health_inspections.groupby(['facility_zip']).agg({
     'facility_id':'nunique','record_id':'count'}).reset_index()
 df.sort_values('record_id',ascending=False)
+
+# Method 2
+count_facilities = los_angeles_restaurant_health_inspections.groupby(['facility_zip'])['facility_id'].agg(no_facilities = 'nunique', no_inspections = 'count').reset_index()

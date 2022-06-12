@@ -12,8 +12,6 @@ ID 10090
 0
 Find the percentage of shipable orders.
 Consider an order is shipable if the customer's address is known.
-
-
 """
 
 import pandas as pd

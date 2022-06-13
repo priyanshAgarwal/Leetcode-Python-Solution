@@ -1,6 +1,0 @@
-# cook your dish here
-
-"""
-
-"""
-

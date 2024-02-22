@@ -1,37 +1,55 @@
+def longestPalindrome(s):
+    """
+    Returns the longest palindromic substring in a given string.
 
+    Args:
+        s: The input string.
 
-# aa=[1,1,2]
+    Returns:
+        The longest palindromic substring in s.
+    """
+    
+    # Initialize an empty string to store the longest palindrome.
+    longest = ""
+    
+    # Iterate over the string, starting from the second character.
+    for i in range(1, len(s)):
+        # Check for odd-length palindromes centered at i.
+        odd = expandAroundCenter(s, i, i)
+        if len(odd) > len(longest):
+            longest = odd
+        
+        # Check for even-length palindromes centered at i and i-1.
+        even = expandAroundCenter(s, i - 1, i)
+        if len(even) > len(longest):
+            longest = even
+        
+    return longest
 
-# print(f"Starting length of array is {len(aa)}")
-# i=0
-# while i<len(aa):
-#     print(f"Length of array is {aa[i]}, {aa[i-1]} popped elment is {aa.pop(-1)} value of i is {i}")
-#     i+=1
+def expandAroundCenter(s, left, right):
+    """
+    Expands a palindrome around a given center and returns the longest substring.
 
+    Args:
+        s: The input string.
+        left: The left index of the center.
+        right: The right index of the center.
 
-# n,v=divmod(-15,10)
+    Returns:
+        The longest palindromic substring centered at (left, right).
+    """
+    
+    while left >= 0 and right < len(s) and s[left] == s[right]:
+        left -= 1
+        right += 1
+    
+    return s[left + 1:right]
 
-# print(n,v)
+# Example usage
+s = "babad"
+longest_palindrome = longestPalindrome(s)
+print(f"The longest palindromic substring in '{s}' is: {longest_palindrome}")
 
-
-
-# def insort(nums:list[int],element:int):
-#     index=0
-#     i=0
-#     while i<len(nums):
-#         if nums[i]<element:
-#             index+=1
-#         i+=1
-
-#     nums.insert(index,element)
-
-#     return nums
-
-
-# sorted_list = [1, 3, 5, 7, 9]
-# insort(sorted_list, 4)
-# print(sorted_list)  # Output: [1, 3, 4, 5, 7, 9]
-
-
-
-
+s = "cbbd"
+longest_palindrome = longestPalindrome(s)
+print(f"The longest palindromic substring in '{s}' is: {longest_palindrome}")

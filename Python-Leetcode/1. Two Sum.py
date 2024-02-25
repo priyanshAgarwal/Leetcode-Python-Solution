@@ -48,17 +48,32 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        hashmap={}
-        for i in range(len(nums)):
-            complement=target-nums[i]
-            if complement in hashmap:
-                return[i,hashmap[complement]]
-            hashmap[nums[i]]=i
+        
+        num_dict={}
+        for i in range(0, len(nums)):
+            num_dict[nums[i]]=i
+        # print(num_dict)
+        for i in range(0, len(nums)):
+            complement = target - nums[i]
+            if complement in num_dict and num_dict[complement]!=i:
+                return [i, num_dict[complement]]
 
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        for i in range(len(nums)):
-            for j in range(i+1,len(nums)):
-                if target-nums[i]==nums[j]:
-                    return [i,j]
+        nums_with_index  = [[i,value] for i,value in enumerate(nums)]
+        # nums_with_index.sort()
+        nums_with_index=sorted(nums_with_index, key=lambda x:x[1])
+        left,right = 0,len(nums)-1
+        while left < right:
+            if nums_with_index[left][1]+nums_with_index[right][1]==target:
+                return [nums_with_index[left][0],nums_with_index[right][0]]
+            elif nums_with_index[left][1] + nums_with_index[right][1] < target:
+                left +=1
+            else:
+                right -=1
+        return []
+
+
+
+

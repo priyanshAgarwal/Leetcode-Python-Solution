@@ -83,11 +83,10 @@ class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         # [1,1,1,2,3,2]
         dict_num = Counter(nums)
-
         # {1:3,2:2,3}
-
         heap=[] 
         for key,value in dict_num.items():
+            # Because in Python we have min heap
             heap.append([-value,key])
         # O(n)
         heapify(heap)
@@ -98,6 +97,13 @@ class Solution:
             # Heappop log*n
             result.append(heappop(heap)[1])
         return result
+
+
+
+                
+
+
+
 
 
 

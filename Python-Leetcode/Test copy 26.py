@@ -64,3 +64,13 @@ class Solution:
 O(N),O(N) 
 """
 
+
+ss = set()
+
+
+for i in range(3):
+    ss.add(i)
+
+
+ss.remove
+

@@ -16,6 +16,4 @@ def count_adjecent_words(words):
                     pnt2+=1
                 counter += pnt2-pnt1
                 pnt1 = pnt2-1
-
-
     return counter

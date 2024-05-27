@@ -57,3 +57,34 @@ s = "(u(love)i)"
 
 # print(reverseParentheses(s=s))
 
+
+
+def stringCompression(chars:list)->int:
+    result = []
+    pnt=0    
+    while pnt<(len(chars)):
+        letter = chars[pnt]
+        result.append(letter)
+        count = 0
+        while pnt<len(chars) and letter==chars[pnt]:
+            count+=1
+            pnt+=1
+            
+        count=list(str(count))
+        
+        for num in count:
+            result.append(num)
+    
+    return result
+
+
+chars = ["a","b","b","b","b","b","b","b","b","b","b","b","b"]
+
+
+# print(stringCompression(chars))
+
+
+number = 11
+
+for i in range(2,number):
+    print(i)

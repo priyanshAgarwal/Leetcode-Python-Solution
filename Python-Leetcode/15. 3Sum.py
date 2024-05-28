@@ -40,7 +40,7 @@ Constraints:
 """
 
 class Solution:
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
         nums.sort()
         result = set()
 
@@ -64,3 +64,33 @@ class Solution:
                     third_idx-=1
         return result
 
+
+
+def threeSum(nums:list)->list:
+    
+    result = set()
+    nums.sort()
+    
+    
+    for i in range(1,len(nums)):
+        firstIndex = i
+        secondIndex = firstIndex+1
+        
+        thirdIndex = len(nums)-1
+        
+        while secondIndex<thirdIndex:
+            localSum = nums[firstIndex]+nums[secondIndex]+nums[thirdIndex]
+            if localSum<0:
+                thirdIndex-=1
+            elif localSum>0:
+                secondIndex+=1
+            else:
+                result.add((nums[firstIndex],nums[secondIndex],nums[thirdIndex]))
+                secondIndex+=1
+                thirdIndex-=1        
+                        
+    return result
+
+nums = [-1,0,1,2,-1,-4]
+
+print(threeSum(nums))

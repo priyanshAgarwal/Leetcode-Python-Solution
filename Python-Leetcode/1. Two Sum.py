@@ -47,7 +47,7 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 """
 
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         
         num_dict={}
         for i in range(0, len(nums)):
@@ -59,21 +59,40 @@ class Solution:
                 return [i, num_dict[complement]]
 
 
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        nums_with_index  = [[i,value] for i,value in enumerate(nums)]
-        # nums_with_index.sort()
-        nums_with_index=sorted(nums_with_index, key=lambda x:x[1])
-        left,right = 0,len(nums)-1
-        while left < right:
-            if nums_with_index[left][1]+nums_with_index[right][1]==target:
-                return [nums_with_index[left][0],nums_with_index[right][0]]
-            elif nums_with_index[left][1] + nums_with_index[right][1] < target:
-                left +=1
-            else:
-                right -=1
-        return []
+# class Solution:
+#     def twoSum(self, nums: List[int], target: int) -> List[int]:
+#         nums_with_index  = [[i,value] for i,value in enumerate(nums)]
+#         # nums_with_index.sort()
+#         nums_with_index=sorted(nums_with_index, key=lambda x:x[1])
+#         left,right = 0,len(nums)-1
+#         while left < right:
+#             if nums_with_index[left][1]+nums_with_index[right][1]==target:
+#                 return [nums_with_index[left][0],nums_with_index[right][0]]
+#             elif nums_with_index[left][1] + nums_with_index[right][1] < target:
+#                 left +=1
+#             else:
+#                 right -=1
+#         return []
 
 
 
 
+def twoSum(nums: list[int], target: int) -> list[int]:
+
+    index_dic = {}
+
+
+    for i in range(len(nums)):
+        index_dic[nums[i]]=i
+
+
+    for index, value in enumerate(nums):
+        compliment = target - value
+        
+        if compliment in index_dic and index_dic[compliment]!=index:
+            return [index,index_dic[compliment]]
+
+
+nums = [3,3]
+
+twoSum(nums,9)

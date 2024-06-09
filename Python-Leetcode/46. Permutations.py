@@ -48,4 +48,18 @@ def permute(nums: list[int]) -> list[list[int]]:
     return ans
 
 
-print(permute([1,2,3]))
+# print(permute([1,2,3]))
+
+from math import ceil
+print(ceil(4/3))
+
+average_row_size = 500  # In bytes
+overhead_per_row = 50   # In bytes
+rows_added_per_day = 1000000000
+
+
+daily_growth = rows_added_per_day * average_row_size * 365
+
+print(f"Estimated Daily Table Growth: {round(int(daily_growth)/(1048576*1024*1024),2)} Tb")
+
+16,996.64

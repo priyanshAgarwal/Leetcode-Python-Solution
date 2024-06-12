@@ -59,3 +59,28 @@ class Solution:
             n=multiply_num(n)
             
         return n == 1
+    
+    
+    
+def happyNumber(num:int)->bool:
+    
+    def getSquare(num:int)->int:
+        squareResult = 0
+        
+        for i in str(num):
+            squareResult+=int(i)**2
+        return squareResult
+    
+    seen = set()
+    while num not in seen and num!=1:
+        seen.add(num)
+        num = getSquare(num=num)
+        
+        if num==1:
+            return True
+        
+    return num==1
+    
+    
+# print(happyNumber(19))
+print(happyNumber(2))

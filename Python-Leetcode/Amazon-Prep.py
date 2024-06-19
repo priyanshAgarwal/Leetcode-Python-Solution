@@ -26,9 +26,32 @@ def fibonacci(num:int)->list:
        fib.append(result)
     return fib
 
-try:
-    n = int(input("Enter the value of n:"))
-    result = fibonacci(n)
-    print(result)
-except:
-    print("Error in the code")
+# try:
+#     n = int(input("Enter the value of n:"))
+#     result = fibonacci(n)
+#     print(result)
+# except:
+#     print("Error in the code")
+    
+    
+    
+def findMax(nums:list, k:int)->list:
+    result = []
+    
+    if k<=0:
+        return -1
+    
+    if k>=len(nums):
+        if len(nums)>0:
+            result.append(max(nums))
+            return result
+    
+    for i in range(0,len(nums)-k+1):
+        localWindow = nums[i:i+k]
+        # O(K)
+        maxValue = max(localWindow)
+        result.append(maxValue)
+    return result
+
+
+print(findMax([1,3,2,4,6,5], 3))

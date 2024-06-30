@@ -19,4 +19,20 @@ def count_adjecent_words(words):
     return counter
 
 
+def minimalOperations(words):
+    counter = [0] * len(words)
 
+    for index, word in enumerate(words):
+        count = 0
+        i = 0
+        while i < len(word) - 1:  # Iterate till second-to-last character
+            if word[i] == word[i + 1]:
+                count += 1
+                i += 1  # Skip the next character since it's already accounted for
+            i += 1
+
+        counter[index] = math.ceil(count / 2)  # Take ceiling for odd repetitions
+    return counter
+
+words = ['add','boook','break','Maaaaaaiasasasas']
+print(minimalOperations(words))

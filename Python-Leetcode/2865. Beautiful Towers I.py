@@ -10,8 +10,6 @@ You are given an array heights of n integers representing the number of bricks i
 
 Return the maximum possible sum of heights of a mountain-shaped tower arrangement.
 
- 
-
 Example 1:
 
 Input: heights = [5,3,4,1,1]
@@ -41,9 +39,5 @@ Output: 18
 Explanation:
 
 We remove some bricks to make heights = [2,2,5,5,2,2], the peak is at index 2 or 3.
-
- 
-
-
 
 """
